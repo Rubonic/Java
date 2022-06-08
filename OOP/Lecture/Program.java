@@ -1,22 +1,15 @@
-public class Penguin extends Animal
+public class Program
 {
-	public Penguin()
+	public static void main(String[] args)
 	{
-		super();
-	}
+		Animal dog = new Animal("Pikachu","Dog",10,true);
 
-	public Penguin(String name,String species,Integer age,Boolean ismammal)
-	{
-		super(name,species,age,ismammal);
-	}
+		Penguin pete=new Penguin("Pete","penguin",20,true);
 
-	public void Eat(String food)
-	{
-		if(food.indexOf("fish")==-1)
-		{
-			System.out.println("Penguin "+name+" refuses to consume "+food);
-			return;
-		}
-		System.out.println("Penguin "+name+" consumes "+food);
+		Deer bambi=new Deer();
+		bambi.setAge(40);
+		bambi.setName("Bambi");
+		bambi.setSpecies("Deer");
+		bambi.setIsmammal(true);
 	}
 };
