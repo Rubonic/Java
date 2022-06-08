@@ -68,8 +68,8 @@ let list = new List();
 /* Remember, it just shoves all of these into our list! */
 list.PushBackN([123, 234, 345, 456, 567, 678]);
 
-console.log(list.Contains(456)); /* Expected Output: true */
-console.log(list.ContainsR(345)); /* Expected Output: true */
+console.log(list.Contains(678)); /* Expected Output: true */
+console.log(list.ContainsR(list.head, 345)); /* Expected Output: true */
 console.log(list.PopBack()); /* Expected Output: 678 */
 console.log(list.PopBack()); /* Expected Output: 567 */
 console.log(list.Contains(567)); /* Expected Output: false */
