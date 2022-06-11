@@ -17,4 +17,13 @@ public class RootController {
 		}
 		return content;
 	}
-}
+	// /users?username=billy
+	@GetMapping("/search")
+	public String search( @RequestParam(value="username", required=false) String searchTerm)
+	{
+		return "<h1>You have searched for: "+searchTerm+"</h1>;
+	}
+	
+	@GetMapping("/user/{user_id}")
+	
+};
