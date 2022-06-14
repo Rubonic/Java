@@ -17,11 +17,11 @@ class BST {
     /* Finds the smallest value in the tree ITERATIVELY */
     Min() {
         /* Your Code Here */
-        let current = this.root;
-        while (current.left) {
-            current = current.left;
+        let current = this.root; // start at root
+        while (current.left) { // while there is a left node
+            current = current.left; // move left
         }
-        return current.value;
+        return current.value; // return the value
     }
 
     /* Worst Time Complexity: O(N) */
@@ -54,7 +54,7 @@ class BST {
                 current = current.right; // move right
             }
         }
-        return false;
+        return false; // if there is no node
     }
 
     /* Worst Time Complexity:  O(N) */
