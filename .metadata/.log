@@ -8976,3 +8976,84 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY org.eclipse.ui 2 2 2022-06-15 11:29:18.419
 !MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-15 12:40:19.612
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-15 12:40:19.612
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@1555abd7[org.springframework.tooling.boot.ls:1.33.0.202204250653(id=569)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-15 12:40:19.614
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-15 12:40:19.633
+!MESSAGE Instantiating ReusableClasspathListenerHandler
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-15 12:40:21.124
+!MESSAGE Boot LS startup time from start to initialized: 1503ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-15 12:40:21.217
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.YhoTBEFwisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-15 12:40:21.219
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-15 12:40:21.221
+!MESSAGE Scheduling initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-15 12:40:21.221
+!MESSAGE Scheduling initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-15 12:40:21.222
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-15 12:40:21.222
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.YhoTBEFw => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-15 12:40:21.226
+!MESSAGE classpath=105 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-15 12:40:21.229
+!MESSAGE buffering callback sts4.classpath.YhoTBEFw Travel false 105
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-15 12:40:21.230
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-15 12:40:21.232
+!MESSAGE classpath=67 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-15 12:40:21.234
+!MESSAGE buffering callback sts4.classpath.YhoTBEFw DaikichiPathVariables false 67
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-15 12:40:21.234
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-15 12:40:21.237
+!MESSAGE classpath=67 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-15 12:40:21.239
+!MESSAGE buffering callback sts4.classpath.YhoTBEFw FruityLoops false 67
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-15 12:40:21.239
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-15 12:40:21.242
+!MESSAGE classpath=83 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-15 12:40:21.244
+!MESSAGE buffering callback sts4.classpath.YhoTBEFw OmikujiForm false 83
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-15 12:40:21.244
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-15 12:40:21.246
+!MESSAGE classpath=66 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-15 12:40:21.247
+!MESSAGE buffering callback sts4.classpath.YhoTBEFw helloworld false 66
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-15 12:40:21.248
+!MESSAGE executing callback sts4.classpath.YhoTBEFw 5 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-15 12:40:21.610
+!MESSAGE executing callback sts4.classpath.YhoTBEFw SUCCESS [done]

@@ -13,6 +13,13 @@
 	<script type="text/javascript" src="js/main.js"></script>
 </head>
 <body>
-	<h1>I'm a Template</h1>
+	<h1>Expense Details</h1>
+	<br>
+	<p>Expense: ${travel.expense}</p>
+	<p>Vendor: ${travel.vendor}</p>
+	<p>Amount: ${travel.amount}</p>
+	<p>Description: ${travel.description}</p>
+
+	<a href="/expenses">Go Back</a>
 </body>
 </html>

@@ -13,6 +13,27 @@
 	<script type="text/javascript" src="js/main.js"></script>
 </head>
 <body>
-	<h1>I'm a Template</h1>
+	<h1>Edit Expense</h1>
+	<br>
+	<form:form class="grid" action="/expenses/edit/${travel.id}" method="POST" modelAttribute="travel">
+		<form:label path="expense">Expense:</form:label>
+		<form:errors class="col_red" path="expense"></form:errors>
+		<form:input placeholder="" path="expense"></form:input>
+		<br>
+		<form:label path="vendor">Vendor:</form:label>
+		<form:errors class="col_red" path="vendor"></form:errors>
+		<form:input placeholder="" path="vendor"></form:input>		
+		<br>
+		<form:label path="amount">Amount:</form:label>
+		<form:errors class="col_red" path="amount"></form:errors>
+		<form:input placeholder="" type="number" path="amount"></form:input>		
+		<br>
+		<form:label path="description">Description:</form:label>
+		<form:errors class="col_red" path="description"></form:errors>
+		<form:input placeholder="" path="description"></form:input>				
+		<br>
+		<input class="btn_submit" type="submit" value="Submit" />
+		<a href="/expenses">Go Back</a>
+	</form:form>
 </body>
 </html>
