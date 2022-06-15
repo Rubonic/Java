@@ -13,7 +13,7 @@
 	<script type="text/javascript" src="js/main.js"></script>
 </head>
 <body>
-	<h2>Add an expense:</h1>
+	<h2>Add an expense:</h2>
 	<br>
 	<form:form class="grid" action="/expenses" method="POST" modelAttribute="travel">
 		<form:label path="expense">Expense:</form:label>
