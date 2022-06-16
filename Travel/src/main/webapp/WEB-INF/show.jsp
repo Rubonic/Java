@@ -21,5 +21,6 @@
 	<p>Description: ${travel.description}</p>
 
 	<a href="/expenses">Go Back</a>
+	<a href="/expenses/edit/${travel.id}">Edit</a>
 </body>
 </html>
