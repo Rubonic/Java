@@ -16,6 +16,7 @@
 <body>
 	<div class="container pt-4">
 		<h2>Change Your Entry</h2>
+		<a href="/books">back to the shelves</a>
 	</div>
 	<div class="container">
 		<form:form action="/books/${book.id}/edit" method="post" modelAttribute="book" class="form">

@@ -34,7 +34,7 @@ public class BookController {
 		model.addAttribute("books", books);		
 		return "dashboard";
 	}
-	
+//------------------------------ADD-----------------------------------------//
 	@GetMapping("/books/add")
 	public String addBook(@ModelAttribute("book")Book book, HttpSession session) {
 		if(session.getAttribute("userId")==null) {
@@ -55,7 +55,7 @@ public class BookController {
 			return "redirect:/books";
 		}
 	}
-	
+//------------------------------SHOW-----------------------------------------//
 	@GetMapping("books/{id}")
 	public String showOneBook(@PathVariable("id")Long id, Model model, HttpSession session) {
 		if(session.getAttribute("userId")==null) {
@@ -65,7 +65,7 @@ public class BookController {
 		model.addAttribute("book", book);
 		return "showBook";
 	}
-	
+//------------------------------DELETE-----------------------------------------//
 	@DeleteMapping("/books/{id}/delete")
 	public String processDelete(@PathVariable("id")Long id, HttpSession session) {
 		if(session.getAttribute("userId")==null) {
@@ -74,7 +74,7 @@ public class BookController {
 		bookService.deleteBook(id);
 		return "redirect:/books";
 	}
-	
+//------------------------------EDIT-----------------------------------------//
 	@GetMapping("/books/{id}/edit")
 	public String editBook(@PathVariable("id")Long id, HttpSession session, Model model) {
 		Book book = bookService.findOneBook(id);
