@@ -19,6 +19,6 @@ public class ItemController {
 		fruitsArrayList.add(new Item("Guayava", 75));
 		
 		model.addAttribute("fruits",fruitsArrayList);
-		return "index.jsp";
+		return "login_register";
 	}
 }

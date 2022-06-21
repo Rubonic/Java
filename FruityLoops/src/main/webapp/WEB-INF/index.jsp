@@ -6,5 +6,5 @@ public class ItemController {
         
     @RequestMapping("/")
     public String index() {
-        return "index.jsp";
+        return "login_register";
     }
