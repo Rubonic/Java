@@ -1,38 +1,63 @@
 package com.codingdojo.models;
 
+import java.util.List;
+
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
-public class User
-{
+@Table(name="users")
+public class User {
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long id;
-	
-	@NotNull(message="Name Required")
-	@Size(min=3,max=30,message="Name must be between 3-30 characters.")
-	private String name;
-	
-	@NotEmpty(message="Email Required")
-	@Email(message="Invalid Email. Example: example@example.com")
-	private String email;
-
-	@Size(min=8,max=128,message="Password must be between 8-128 characters")
-	private String password;
-
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    
+    @NotEmpty(message="Username is required!")
+    @Size(min=3, max=30, message="Username must be between 3 and 30 characters")
+    private String userName;
+    
+    @NotEmpty(message="Email is required!")
+    @Email(message="Please enter a valid email!")
+    private String email;
+    
+    @NotEmpty(message="Password is required!")
+    @Size(min=8, max=128, message="Password must be between 8 and 128 characters")
+    private String password;
+    
     @Transient
     @NotEmpty(message="Confirm Password is required!")
     @Size(min=8, max=128, message="Confirm Password must be between 8 and 128 characters")
-    private String confirm;	
-	
+    private String confirm;
+  
+    public User() {}
+    
+    public User(String userName, String email, String password) {
+    	this.userName = userName;
+    	this.email = email;
+    	this.password = password;
+    }
+    
+    @OneToMany(mappedBy="creator", fetch=FetchType.LAZY)
+    private List<Book> createdBooks;
+    
+    public List<Book> getCreatedBooks() {
+    	return createdBooks;
+    }
+    
+    public void setCreatedBooks(List<Book> createdBooks) {
+    	this.createdBooks = createdBooks;
+    }
+
 	public Long getId() {
 		return id;
 	}
@@ -41,12 +66,12 @@ public class User
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public String getUserName() {
+		return userName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
 	public String getEmail() {
@@ -72,9 +97,4 @@ public class User
 	public void setConfirm(String confirm) {
 		this.confirm = confirm;
 	}
-
-	public User()
-	{
-		
-	}
-};
+}
