@@ -27,7 +27,7 @@
 			<p class="border-top border-bottom border-dark">${book.thoughts}</p>
 		</div>
 		<c:choose>
-			<c:when test="${book.creator.id == userId}">
+			<c:when test="${namejoy.id == userId}">
 				<div class="d-flex justify-content-between">
 					<div><a href="/books/${book.id}/edit" class="btn btn-primary mb-3">Edit</a></div>
 					<div>
