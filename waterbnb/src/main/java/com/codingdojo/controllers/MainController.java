@@ -70,8 +70,8 @@ public class MainController {
 	    }
 	    session.setAttribute("userId", user.getId());
 	    
-	    if(user.getHost()) {
-	    	return "redirect:/host/dashboard";
+	    if(user.getInstructor()) {
+	    	return "redirect:/instructor/dashboard";
 	    }
 	    
 	    return "redirect:/";
@@ -90,7 +90,7 @@ public class MainController {
 	     
 	    session.setAttribute("userId", user.getId());
 	    
-	    if(user.getHost()) {
+	    if(user.getInstructor()) {
 	    	return "redirect:/host/dashboard";
 	    }
 	    
@@ -103,7 +103,7 @@ public class MainController {
 	    return "redirect:/";
 	}
 	
-	@GetMapping("/host/dashboard")
+	@GetMapping("/instructor/dashboard")
 	public String listings(@ModelAttribute("listing") Listing listing, HttpSession session, Model model) {
 		
 		if(session.getAttribute("userId") == null) {
@@ -112,10 +112,10 @@ public class MainController {
 		Long userId = (Long) session.getAttribute("userId");
 		
 		model.addAttribute("listings", listingService.findByUser(userService.findById(userId)));
-		return "host_dashboard";
+		return "instructor_dashboard";
 	}
 	
-	@PostMapping("/host/dashboard")
+	@PostMapping("/instructor/dashboard")
 	public String addListing(@Valid @ModelAttribute("listing") Listing listing, BindingResult result, HttpSession session) {
 		if(session.getAttribute("userId") == null) {
 			return "redirect:/logout";
@@ -123,12 +123,12 @@ public class MainController {
 		Long userId = (Long) session.getAttribute("userId");
 		
 		if(result.hasErrors()) {
-			return "host_dashboard";
+			return "instructor_dashboard";
 		}else {
 			Listing newListing = new Listing(listing.getLocation(), listing.getDescription(), listing.getPrice(), listing.getSize());
-			newListing.setHost(userService.findById(userId));
+			newListing.setInstructor(userService.findById(userId));
 			listingService.addListing(newListing);
-			return "redirect:/host/dashboard";
+			return "redirect:/instructor/dashboard";
 		}
 	}
 	
@@ -139,7 +139,7 @@ public class MainController {
 		return "reviews_frame";
 	}
 	
-	@GetMapping("/host/pools/{id}")
+	@GetMapping("/instructor/workouts/{id}")
 	public String viewListing(@PathVariable("id") Long id, HttpSession session, Model model) {
 		if(session.getAttribute("userId") == null) {
 			return "redirect:/logout";
@@ -150,7 +150,7 @@ public class MainController {
 		return "edit_listing";
 	}
 	
-	@PostMapping("/host/pools/{id}")
+	@PostMapping("/instructor/workouts/{id}")
 	public String editPool(
 			@PathVariable("id") Long id, 
 			@Valid @ModelAttribute("listing") Listing listing, 
@@ -168,19 +168,19 @@ public class MainController {
 			System.out.println("errors = "+result.getErrorCount());
 			return "edit_listing";
 		}else {
-			listing.setHost(user);
+			listing.setInstructor(user);
 			listingService.updateListing(listing);
-			return "redirect:/host/dashboard";
+			return "redirect:/instructor/dashboard";
 		}
 	}
 	
-	@RequestMapping("/host/pools/delete/{id}")
+	@RequestMapping("/instructor/workouts/delete/{id}")
 	public String deleteListing(@PathVariable("id") Long id, HttpSession session, Model model) {
 		listingService.deleteListing(listingService.findById(id));
 		return "redirect:/";
 	}
 	
-	@GetMapping("/pools/{id}")
+	@GetMapping("/workouts/{id}")
 	public String showListing(@PathVariable("id") Long id, HttpSession session, Model model) {
 		if(session.getAttribute("userId") != null) {
 			Long userId = (Long) session.getAttribute("userId");
@@ -191,14 +191,14 @@ public class MainController {
 		return "listing_details";
 	}
 	
-	@GetMapping("/pools/{id}/review")
+	@GetMapping("/workouts/{id}/review")
 	public String leaveReview(@PathVariable("id") Long id, @ModelAttribute("review") Review review, HttpSession session, Model model) {
 		model.addAttribute("listing", listingService.findById(id));
 		model.addAttribute("nums", numbers);
 		return "new_review";
 	}
 	
-	@PostMapping("/pools/{id}/review")
+	@PostMapping("/workouts/{id}/review")
 	public String leaveReview(@PathVariable("id") Long id, 
 			@Valid @ModelAttribute("review") Review review, 
 			BindingResult result, 
@@ -225,7 +225,7 @@ public class MainController {
 			}
 			listing.setRating(newRating/count);
 			listingService.updateListing(listing);
-			return "redirect:/pools/"+id;
+			return "redirect:/workouts/"+id;
 		}
 	}
 }
