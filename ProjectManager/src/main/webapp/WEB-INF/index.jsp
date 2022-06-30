@@ -13,6 +13,7 @@
 <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
+<section class="vh-100 gradient-custom">
 	<div class="container mt-5">
 		<h1>Register</h1>
 		<form:form action="/register" method="post" modelAttribute="newUser">
@@ -62,5 +63,6 @@
 
 
 	</div>
+</section>
 </body>
 </html>
